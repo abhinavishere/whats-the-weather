@@ -55,7 +55,7 @@ const WeatherHome = () => {
       </div>
     );
   }
-  console.log(weatherCtx);
+  // console.log(weatherCtx);
 
   // ON GeoButtton Click
   const onGeoButtonClick = () => {
