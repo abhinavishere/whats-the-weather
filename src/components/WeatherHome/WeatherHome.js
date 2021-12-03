@@ -18,6 +18,7 @@ const WeatherHome = () => {
     );
   } else {
     const { current, city } = weatherCtx;
+    console.log(current, city);
     // Get current weather icon from current object in weather context
     const currentWeatherConditionIcon = `http://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`;
 
