@@ -9,7 +9,7 @@ const ForecastItem = ({ item }) => {
       <img src={forecastIcon} alt="forecast icon" />
       <div className="flex justify-between items-center px-3 font-semibold text-md">
         <span>{item.temp.max.toFixed(1)}&#176;C</span>
-        <span className="text-gray-600">{item.temp.min.toFixed(1)}&#176;C</span>
+        <span className="text-gray-500">{item.temp.min.toFixed(1)}&#176;C</span>
       </div>
     </li>
   );

@@ -8,6 +8,9 @@ module.exports = {
         "very-dark-blue": "#100E1D",
         "progress-bar": "#FFEC65",
       },
+      fontFamily: {
+        raleway: ["Raleway", "sans-serif"],
+      },
     },
   },
   variants: {
