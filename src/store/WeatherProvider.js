@@ -14,11 +14,12 @@ const WeatherProvider = (props) => {
   const getCurrentLocation = useCallback(async (lat, long) => {
     try {
       const res = await fetch(
-        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`
+        `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&limit=10&appid=${apiKey}`
       );
       if (!res.ok) throw new Error("Something went wrong. Error:" + res.status);
       const data = await res.json();
-      city = data.city;
+      city = data[data.length - 1].name;
+      console.log(data[data.length - 1].name);
     } catch (err) {
       console.error(err.message);
     }
@@ -57,8 +58,7 @@ const WeatherProvider = (props) => {
     [getCurrentLocation]
   );
 
-  const getWeatherAndLocation = useCallback(() => {
-    // Get coordinates using Geolocation API
+  useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
@@ -73,10 +73,6 @@ const WeatherProvider = (props) => {
       );
     }
   }, [getCurrentLocation, getWeather]);
-
-  useEffect(() => {
-    getWeatherAndLocation();
-  }, [getWeatherAndLocation]);
 
   return (
     <WeatherContext.Provider value={weather}>

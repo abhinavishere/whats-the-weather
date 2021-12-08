@@ -1,13 +1,14 @@
 import React from "react";
+import ForecastList from "./components/Forecast/ForecastList";
 import WeatherHome from "./components/WeatherHome/WeatherHome";
+
 import WeatherProvider from "./store/WeatherProvider";
 
 function App() {
   return (
     <WeatherProvider>
       <WeatherHome />
-      {/* WeatherInputForm */}
-      {/* Weather Forecast */}
+      <ForecastList />
       {/* Highlights */}
     </WeatherProvider>
   );

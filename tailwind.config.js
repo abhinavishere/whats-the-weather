@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         "dark-blue": "#1E213A",
         "very-dark-blue": "#100E1D",
+        "progress-bar": "#FFEC65",
       },
     },
   },

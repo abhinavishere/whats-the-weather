@@ -8,17 +8,17 @@ const WeatherHome = () => {
   const weatherCtx = useContext(WeatherContext);
 
   let homeContent = "";
+  const spinner = (
+    <div className="w-full h-full flex justify-center items-center">
+      <Loader />
+    </div>
+  );
   // If weather context is not returned
   if (!weatherCtx) {
-    homeContent = (
-      // Loadins Spinner
-      <div className="w-full h-full flex justify-center items-center">
-        <Loader />
-      </div>
-    );
+    homeContent = spinner;
   } else {
     const { current, city } = weatherCtx;
-    console.log(current, city);
+    // console.log(current, city);
     // Get current weather icon from current object in weather context
     const currentWeatherConditionIcon = `http://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`;
 
