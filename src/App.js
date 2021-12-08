@@ -7,9 +7,11 @@ import WeatherProvider from "./store/WeatherProvider";
 function App() {
   return (
     <WeatherProvider>
-      <WeatherHome />
-      <ForecastList />
-      {/* Highlights */}
+      <div className="lg:grid">
+        <WeatherHome />
+        <ForecastList />
+        {/* Highlights */}
+      </div>
     </WeatherProvider>
   );
 }

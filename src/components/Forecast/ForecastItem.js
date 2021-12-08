@@ -4,7 +4,7 @@ const ForecastItem = ({ item }) => {
   const forecastIcon = `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`;
 
   return (
-    <li className=" border-2 border-transparent flex flex-col justify-evenly bg-dark-blue focus:border-white">
+    <li className=" border-2 border-transparent flex flex-col justify-evenly bg-dark-blue focus:border-white py-2">
       <p className="text-center font-semibold text-lg">{item.day}</p>
       <img src={forecastIcon} alt="forecast icon" />
       <div className="flex justify-between items-center px-3 font-semibold text-md">
